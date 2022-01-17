@@ -12,3 +12,4 @@ override.tf.json - все фалы с таким именем в текущем 
 *_override.tf.json - все фалы содержащие в конце имени файла '_override.tf.json' в текущем катологе
 .terraformrc - все фалы с таким именем в текущем катологе
 terraform.rc - все фалы с таким именем в текущем катологе
+For сreated branch FIX
