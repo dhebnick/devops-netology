@@ -7,7 +7,7 @@
 - Показать послученый HTTP код и объяснить, что он означает.
 
 # Ответ:
-'''bash
+```bash
 telnet stackoverflow.com 80
 Trying 151.101.129.69...
 Connected to stackoverflow.com.
@@ -35,7 +35,7 @@ Set-Cookie: prov=6e6c01cd-eeed-c443-b456-09d32d28e1ed; domain=.stackoverflow.com
 
 Connection closed by foreign host.
 
-'''
+```
 
 Пришел код 301 означающий, что страница переехала навсегда (Moved Permanently).
 Так же, в пункте "location" указано куда переехала страница.
@@ -49,7 +49,7 @@ Connection closed by foreign host.
 2.6 скриншот консоли браузера в ответе
 
 # Ответы:
-2.6. https://disk.yandex.ru/i/Nk73wHncmfkhlA
+2.6. `https://disk.yandex.ru/i/Nk73wHncmfkhlA
 2.5. Дольше сего обрабатыавлся скрипт beacon.js - 10.31s
 2.4. 307 Внутреннее перенаправление
 2.3. перенапраление на https
@@ -60,7 +60,7 @@ Connection closed by foreign host.
 # Ответ №4 Какому провайдеру принадлежит ваш IP адрес? Какой автономной системе AS? Воспользуйтесь утилитой whois
 Провайдер - JSC "Zap-Sib TransTeleCom"
 
-'''bash
+```bash
 whois 0.0.0.0
 % This is the RIPE Database query service.
 % The objects are in RPSL format.
@@ -135,10 +135,10 @@ last-modified:  2019-07-01T07:11:43Z
 source:         RIPE
 
 % This query was served by the RIPE Database Query Service version 1.102.2 (HEREFORD)
-'''
+```
 
 # Ответ №5 Через какие сети проходит пакет, отправленный с вашего компьютера на адрес 8.8.8.8? Через какие AS? Воспользуйтесь утилитой traceroute
-'''bash
+```bash
 traceroute -An 8.8.8.8
 traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets
 1  172.20.240.1 [*]  4.956 ms  4.794 ms  4.772 ms
@@ -165,11 +165,11 @@ traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets
 22  * * *
 23  * * *
 24  8.8.8.8 [AS15169]  54.302 ms  57.819 ms  53.839 ms
-'''
+```
 
 # Повторите задание 5 в утилите mtr. На каком участке наибольшая задержка - delay?
 
-'''bash
+```bash
 My traceroute  [v0.93]
 nick42ru (172.20.242.101)                                           2022-03-10T00:21:28+0700
 Keys:  Help   Display mode   Restart statistics   Order of fields   quit
@@ -199,21 +199,21 @@ Keys:  Help   Display mode   Restart statistics   Order of fields   quit
 22. (waiting for reply)
 23. (waiting for reply)
 24. AS15169  8.8.8.8                               0.0%    14   58.0  58.3  57.9  59.0   0.3
-'''
+```
 
 Наибольшая задержка на участке 108.170.250.83 - 142.251.237.156
 
 # Ответ №7 Какие DNS сервера отвечают за доменное имя dns.google? Какие A записи? воспользуйтесь утилитой dig
 
-'''bash
+```bash
 ;; ANSWER SECTION:
 dns.google.             0       IN      A       8.8.8.8
 dns.google.             0       IN      A       8.8.4.4
-'''
+```
 
 # Ответ №8 Проверьте PTR записи для IP адресов из задания 7. Какое доменное имя привязано к IP? воспользуйтесь утилитой dig
 
-'''bash
+```bash
 dig -x 8.8.8.8
 
 ; <<>> DiG 9.16.1-Ubuntu <<>> -x 8.8.8.8
@@ -253,7 +253,6 @@ dig -x 8.8.4.4
 ;; SERVER: 172.20.240.1#53(172.20.240.1)
 ;; WHEN: Thu Mar 10 01:52:20 +07 2022
 ;; MSG SIZE  rcvd: 82
-'''
+```
 
 В обоих случаях PTR запись указыает на dns.google.
-
