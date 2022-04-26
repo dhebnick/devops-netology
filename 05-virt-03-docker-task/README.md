@@ -91,5 +91,41 @@ https://hub.docker.com/repository/docker/dhebnick/nginx-ban
 - Подключитесь во второй контейнер и отобразите листинг и содержание файлов в ```/data``` контейнера.
 
 ``` 
-
+~/netology -------------------------------------------------------- 14s | 02:29:57 
+> docker image ls
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+debian       latest    a11311205db1   6 days ago     124MB
+centos       latest    5d0da3dc9764   7 months ago   231MB
+ ~/netology ------------------------------------------------------- 02:31:47 
+> docker run -it --name centos -d -v /home/nick/data:/data centos
+48bbd042d0d76402adf4d7544486507e8bc0b921f81475a7b13ea6933159ca89
+ ~/netology ------------------------------------------------------- 02:36:50 
+> docker run -it --name debian  -d -v /home/nick/data:/data debian  
+8bac7ccc9e3811eb4331936ca9b016a39c317d294170b56c693318fadf4abfe7
+ ~/netology ------------------------------------------------------- 02:37:21 
+> docker ps
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS          PORTS     NAMES
+8bac7ccc9e38   debian    "bash"        27 seconds ago   Up 27 seconds             debian
+48bbd042d0d7   centos    "/bin/bash"   59 seconds ago   Up 58 seconds             centos
+ ~/netology ------------------------------------------------------- 02:37:48 
+> docker exec -it centos bash
+[root@48bbd042d0d7 /]# cd data/
+[root@48bbd042d0d7 data]# touch test 
+[root@48bbd042d0d7 data]# ls
+test
+[root@48bbd042d0d7 data]# exit
+ ~/netology ------------------------------------------------------- 1m 8s | 02:40:11 
+> cd ..
+ ~ ---------------------------------------------------------------- 02:40:18 
+> cd data 
+ ~/data ----------------------------------------------------------- 02:40:21 
+> ls
+test
+ ~/data ----------------------------------------------------------- 02:40:23 
+> touch test_host
+ ~/data ----------------------------------------------------------- 02:40:44 
+> docker exec -it debian bash
+root@8bac7ccc9e38:/# ls /data 
+test  test_host
+root@8bac7ccc9e38:/#
 ```
