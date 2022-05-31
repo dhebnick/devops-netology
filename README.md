@@ -81,3 +81,5 @@ git merge git-rebase
 git push origin
 
 По идее можно ещё git branch -d сделать на ветки, но я пока оставлю для проверки.
+
+test
